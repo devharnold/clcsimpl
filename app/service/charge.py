@@ -1,7 +1,5 @@
 # simulate card payment
-import requests
-import json
-from app.client.cybersource_client import CyberSourceClient
+from client.cybersource_client import CyberSourceClient
 
 
 class ChargeFunc:
@@ -25,6 +23,20 @@ class ChargeFunc:
                 }
             },
             "OrderInfo": {
-                "amountDetails": 
+                "amountDetails": {
+                    "totalAmount": amount,
+                    "currency": currency
+                },
+                "billTo": {
+                    "firstName": billing_info["first_name"],
+                    "lastName": billing_info["last_name"],
+                    "email": billing_info["email"],
+                    "phoneNumber": billing_info["phone"],
+                    "country": billing_info["country"]
+                }
             }
         }
+
+        # send the request to cybresource
+        response = self.client.post("/pts/v2/payments", payload)
+        return response

@@ -22,16 +22,17 @@ class AmountDetails(BaseModel):
     totalAmount: str
     currency: str
 
-class BillingTo(BaseModel):
+class BillTo(BaseModel):
     firstName: str
     lastName: str
+    address1: str
     email: str
     phoneNumber: str
     country: str
 
 class OrderInformation(BaseModel):
     amountDetails: AmountDetails
-    billingTo: BillingTo
+    billToInfo: BillTo
 
 class ProcessInformation(BaseModel):
     capture: bool

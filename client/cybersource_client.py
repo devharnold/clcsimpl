@@ -43,7 +43,7 @@ class CyberSourceClient:
         digest = hashlib.sha256(body.encode("utf-8")).digest()
         return f"SHA-256={base64.b64encode(digest).decode()}"
     
-    def get_http_date(self) -> str:
+    def fetch_http_date(self) -> str:
         return datetime.now().strftime("%a, %d, %b, %Y, %H:%M:%S GMT")
     
     def generate_signature(self, method, path, headers) -> str:
