@@ -1,4 +1,4 @@
-# configuration settings
+# here we are going to configure application parameters: the api keys and more
 from pydantic import BaseSettings
 
 class Settings(BaseSettings):
