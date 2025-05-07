@@ -26,9 +26,12 @@ class BillTo(BaseModel):
     firstName: str
     lastName: str
     address1: str
+    locality: str
+    administrativeArea: str
+    postalCode: str
+    country: str
     email: str
     phoneNumber: str
-    country: str
 
 class OrderInformation(BaseModel):
     amountDetails: AmountDetails

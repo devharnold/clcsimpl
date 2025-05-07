@@ -30,9 +30,13 @@ class ChargeFunc:
                 "billTo": {
                     "firstName": billing_info["first_name"],
                     "lastName": billing_info["last_name"],
+                    "address1": billing_info["Address1"],
+                    "locality": billing_info["locality"],
+                    "administrative_area": billing_info["administrative_area"],
+                    "postal_code": billing_info["postal_code"],
+                    "country": billing_info["country"],
                     "email": billing_info["email"],
-                    "phoneNumber": billing_info["phone"],
-                    "country": billing_info["country"]
+                    "phone_number": billing_info["phone"]
                 }
             }
         }
